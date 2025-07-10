@@ -1,0 +1,57 @@
+ <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/images/logontas2.png" alt="Logo NTAS" class="logo-image">
+            </a>
+             
+       <nav>
+    <ul class="nav-menu">
+        <li class="nav-item">
+            <a href="/" class="nav-link <%= currentPage === 'home' ? 'active' : '' %>">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a href="/about" class="nav-link <%= currentPage === 'about' ? 'active' : '' %>">À Propos</a>
+        </li>
+        <li class="nav-item">
+            <a href="/services" class="nav-link <%= currentPage === 'services' ? 'active' : '' %>">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a href="/projects" class="nav-link <%= currentPage === 'projects' ? 'active' : '' %>">
+                Projets
+                <span class="dropdown-arrow">▼</span>
+            </a>
+            <div class="dropdown-menu">
+                <a href="/projects" class="dropdown-item <%= currentPage === 'projects' ? 'active' : '' %>">
+                    Projets 
+                    <span class="dropdown-item-arrow">›</span>
+                </a>
+                
+                <a href="/projects/current_projects" class="dropdown-item <%= currentPage === 'projects-current_projects' ? 'active' : '' %>">
+                    Projets en cours
+                    <span class="dropdown-item-arrow">›</span>
+                </a>
+                <a href="/projects/galerie" class="dropdown-item <%= currentPage === 'projects-galerie' ? 'active' : '' %>">
+                    Galerie
+                    <span class="dropdown-item-arrow">›</span>
+                </a>
+               
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="/contact" class="nav-link <%= currentPage === 'contact' ? 'active' : '' %>">Contact</a>
+        </li>
+    </ul>
+</nav>
+             
+            <div class="cta-section">
+                <div class="social-icons">
+                    <a href="#"><img src="/images/facebook.png" alt="Facebook" /></a>
+                    <a href="#"><img src="/images/instagram.png" alt="Instagram" /></a>
+                    <a href="#"><img src="/images/linkedin.png" alt="LinkedIn" /></a>
+                </div>
+                <a href="/devis" class="cta-button">Devis Gratuit</a>
+            </div>
+             
+            <button class="mobile-menu-toggle" aria-label="Menu mobile">☰</button>
+        </div>
+    </header>

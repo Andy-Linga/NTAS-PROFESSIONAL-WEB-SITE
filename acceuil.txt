@@ -1,0 +1,203 @@
+
+    <section class="top-page">
+        <div class="container">
+            <div class="landing">
+                <div class="landing_text">
+                    <h1 class="main-title">INTEGRATEUR DE SOLUTIONS CONVERGENTES</h1>
+                    <p class="par">Intégrateur de technologies innovantes et de solutions informatiques à forte valeur ajoutée.</p>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="below-page">
+      <div class="left-content">
+            <div class="container2">
+              <h3>A PROPOS DE NOTRE ENTREPRISE </h3>
+              <h1>Nous batissons <br>la confiance,<br>nous sommes NTAS</h1>
+              <p>Nous sommes importateur et intégrateur de nouvelles<br> technologies et de systèmes intégrés<br> innovants de haute valeur ajoutée informatique.</p>
+             
+           </div>
+          
+           <div class="yes">
+            <div class="yessy">
+              <img src="images/g5.png" alt="okay" class="yesicon">
+              <p class="yestext">Meilleur Qualité</p>
+            </div>
+            <div class="yessy">
+              <img src="images/g5.png" alt="okay" class="yesicon">
+              <p class="yestext">Meilleur Qualité</p>
+            </div>
+            <div class="yessy">
+              <img src="images/g5.png" alt="okay" class="yesicon">
+              <p class="yestext">Meilleur Qualité</p>
+            </div>
+           
+          </div>
+          <div class="botn">
+            <a href="#">A propos de nous</a>
+          </div>
+         
+         
+      </div>
+        <div class="photo-group">
+          <img src="images/yazaki1 - Copie.jpg" alt="Description de l'image">
+          <img src="images/yazaki2 - Copie.jpg" alt="Description de l'image" class="diff2">
+          <img src="images/cable1 - Copie.jpeg" alt="Description de l'image" class="diff">
+        </div>
+    </section>
+<!--------------------------------------------------------------------------------------------->
+
+    <section class="service">
+      <div class="text-container">
+        <p>NOS METIERS</p>
+        <h3>Ce que nous offrons et ce que nous faisons</h3>
+      </div>
+      <div class="container3">
+            <div class="square">
+              <img src="images/tele.png" alt="icone" class="icon">
+              <h3>Choix Technologique</h3>
+              <p>Nous aidons nos clients à choisir les technologies les plus adaptées à leurs besoins.</p>
+
+            </div>
+
+            <div class="square">
+              <img src="images/tarte.png" alt="icone" class="icon">
+              <h3>Etudes et Conseils</h3>
+              <p>Nous analysons vos besoins pour vous proposer des solutions efficaces.</p>
+            </div>
+
+            <div class="square">
+              <img src="images/pinceau.png" alt="icone" class="icon">
+              <h3>Réalisations et Déploiement solutions</h3>
+              <p>Nous développons et mettons en place vos solutions sur mesure.</p>
+
+            </div>
+
+           
+          <div class="square">
+            <img src="images/reglage.png" alt="icone" class="icon">
+            <h3>Suivie et Pilotage</h3>
+            <p>Nous assurons le suivi complet et la bonne coordination de vos projets.</p>
+
+          </div>
+
+        <div class="square">
+          <img src="images/clé.png" alt="icone" class="icon">
+          <h3>Projet clé en main</h3>
+          <p>Nous livrons des solutions prêtes à l'emploi, de A à Z.</p>
+       </div>
+
+      </div>  
+
+    </section>
+
+
+    <section class="service2">
+      <div class="container4">
+     <div class="text-container2">
+      <p>NOS SERVICES</p>
+      <h3>Notre expertise au service de vos systèmes </h3>
+     </div>
+     
+      <div class="slider-container">
+          <button class="slider-btn left" onclick="scrollSlider(-1)">&#8592;</button>
+
+            <div class="slider-wrapper" id="slider">
+              <div class="square2">
+                <img src="/images/yazaki1 - Copie.jpg" alt="icone" class="photo-service">
+               <div class="base">
+                  <div class="text-base">
+                      <h4>Machinery & Gear</h4>
+                      <p>Commercial</p>
+                  </div>  
+                </div>
+              </div>
+              
+              <div class="square2">
+                <img src="/images/yazaki1 - Copie.jpg" alt="icone" class="photo-service">
+               <div class="base">
+                  <div class="text-base">
+                      <h4>Machinery & Gear</h4>
+                      <p>Commercial</p>
+                  </div>  
+                </div>
+              </div>
+              
+              <div class="square2">
+                <img src="/images/yazaki1 - Copie.jpg" alt="icone" class="photo-service">
+                <div class="base">
+                  <div class="text-base">
+                      <h4>Machinery & Gear</h4>
+                      <p>Commercial</p>
+                  </div>  
+                </div>
+              </div>
+              
+              <div class="square2">
+                <img src="/images/yazaki1 - Copie.jpg" alt="icone" class="photo-service">
+                <div class="base">
+                  <div class="text-base">
+                      <h4>Machinery & Gear</h4>
+                      <p>Commercial</p>
+                  </div>  
+                </div>
+              </div>
+             
+              <div class="square2">
+                <img src="/images/yazaki1 - Copie.jpg" alt="icone" class="photo-service">
+                <div class="base">
+                  <div class="text-base">
+                      <h4>Machinery & Gear</h4>
+                      <p>Commercial</p>
+                  </div>  
+                </div>
+              </div>
+            </div>
+
+          
+          <!-- Ajoute autant de carrés que nécessaire -->
+          
+          <button class="slider-btn right" onclick="scrollSlider(1)">&#8594;</button> 
+            
+      </div>
+    </section>
+<!-------------------------- Commentaires------------------------------------------------------------------->
+
+<%- include('partials/commentaires') %>
+
+
+<!--------------------------------------------------------------------------------------------->
+
+<section class="contact-section">
+  <div class="contact-left">
+    <img src="/images/logontas.png" alt="Logo" class="logo">
+    
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>contact@ntas.tn</p>
+      <p>+216 71 234 567</p>
+
+      <h3>Siège</h3>
+      <p>Rue Lac Windermere, Les Berges du Lac, 1053 Tunis, Tunisie</p>
+
+      
+    </div>
+
+  </div>
+
+  <!-- FORMULAIRE VRAI -->
+  <form class="contact-right" method="POST" action="/contact">
+    <h2>Contactez-nous</h2>
+    <input type="text" name="nom" placeholder="Nom et prénom" required>
+    <input type="text" name="telephone" placeholder="Téléphone" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="sujet" placeholder="Sujet" required>
+    <textarea name="message" placeholder="Message" rows="4" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+<!--------------------------------------------------------------------------------------------->
+   
+

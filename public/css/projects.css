@@ -1,0 +1,174 @@
+/* Import Google font - Poppins */
+
+        .projets {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projets h2 {
+            text-align: center;
+            margin: 40px;
+            font-size: 2.5rem;
+            color: #EE7C00;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .proj {
+            position: relative;
+            height: 250px;
+            
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background: #25316A;
+        }
+
+        .proj::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.8), rgba(255, 107, 53, 0.6));
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .proj:hover::before {
+            opacity: 1;
+        }
+
+        .proj:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+
+        .proj-image {
+            width: 100%;
+            height: 70%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .proj:hover .proj-image {
+            transform: scale(1.1);
+        }
+
+        .proj-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #25316A;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            z-index: 2;
+        }
+
+        .proj:hover .proj-title {
+            background: #EE7C00;
+            transform: translateY(-5px);
+        }
+
+        .proj-arrow {
+            position: absolute;
+            top: 50%;
+            right: 165px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #EE7C00;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 3;
+        }
+
+        .proj:hover .proj-arrow {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-10px);
+        }
+
+        .proj-arrow::after {
+            content: '→';
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .pagination button {
+            width: 50px;
+            height: 50px;
+            border: none;
+           
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .pagination button.active {
+            background: #EE7C00;
+            color: white;
+        }
+
+        .pagination button:not(.active) {
+            background: #EE7C00;
+            color: #ccc;
+        }
+
+        .pagination button:not(.active):hover {
+            background: #25316A;
+            color: white;
+        }
+
+        .pagination button.nav-btn {
+            background: #25316A;
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        .pagination button.nav-btn:hover {
+            background: #25316A;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .proj {
+                height: 200px;
+            }
+        }
+    

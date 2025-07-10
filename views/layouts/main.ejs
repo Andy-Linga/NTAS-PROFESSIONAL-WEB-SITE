@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= locals.title %></title>
+  <meta name="description" content="<%= locals.description %>">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- CSS spécifique à une ou plusieurs pages -->
+  <% if (typeof stylesheet !== 'undefined') { %>
+    <% if (Array.isArray(stylesheet)) { %>
+      <% stylesheet.forEach(function(file) { %>
+        <link rel="stylesheet" href="/css/<%= file %>.css" />
+      <% }); %>
+    <% } else { %>
+      <link rel="stylesheet" href="/css/<%= stylesheet %>.css" />
+    <% } %>
+  <% } %>
+
+  <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+  <%- include('../partials/header.ejs') %>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+</body>
+</html>

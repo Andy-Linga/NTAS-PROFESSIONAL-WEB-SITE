@@ -1,0 +1,96 @@
+section.commentaire {
+  text-align: center;
+  padding: 80px 20px;
+
+}
+
+
+.text-container4 {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-container4 .subtitle {
+  font-size: 20px;
+  color: #EE7C00; /* orange */
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.text-container4 .title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #000; /* noir */
+}
+
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background-color: #111;
+  color: white;
+  max-width: 800px;
+  padding: 80px 40px 40px;
+  position: relative;
+}
+
+.testimonial-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+
+.testimonial-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.testimonial-text p {
+  color:#EE7C00;
+}
+
+
+.testimonial-card h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.client-role {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.arrow {
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: #e66b00;
+}

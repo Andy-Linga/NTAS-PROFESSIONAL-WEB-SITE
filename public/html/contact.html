@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez-Nous - NTAS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <a class="email" href="mailto:imed.koubaa@ntas.tn">Contacter le directeur général : imed.koubaa@ntas.tn</a>
+      <div class="socials">
+        <a href="https://www.facebook.com/ntas.tn/" target="_blank"><img src="img contact/facebook logo.png" alt="Facebook"></a>
+        <a href="https://tn.linkedin.com/company/ntas-tn" target="_blank"><img src="img contact/linkedin.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+    <div class="nav-container">
+      <img src="img contact/Logo Ntas.png" alt="Logo NTAS" class="logo">
+      <nav>
+        <ul>
+          <li><a href="/aaccueil/index1.html">Accueil</a></li>
+          <li><a href="/service/service.html">Nos Services</a></li>
+          <li><a href="/projet/nosprojet.html">Nos Projets</a></li>
+          <li><a href="/about us/about.html">À Propos de Nous</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact info -->
+  <section class="contact-header">
+    <div class="contact-box">
+      <i class="fas fa-phone-alt"></i>
+      <div>
+        <h4>Téléphone</h4>
+        <p>+1 (800) 55 345 66</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <i class="fas fa-envelope"></i>
+      <div>
+        <h4>Messagerie électronique</h4>
+        <p>factory@xtra.industriel</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <h4>Adresse du bureau</h4>
+        <p>22345, rue W. New York, États-Unis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map">
+    <h2>Notre Localisation</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.860680625207!2d10.191061075646235!3d36.821858272240945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34f35b3a903d%3A0xacba82076311e734!2sNew%20Technology%20Access%20Service%20-%20NTAS!5e0!3m2!1sfr!2stn!4v1722038142311!5m2!1sfr!2stn"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-info">
+        <h5>CONTACTEZ-NOUS</h5>
+        <h2>CONTACTEZ-NOUS</h2>
+        <p>
+          Les usines sont apparues avec l'introduction de machines pendant la révolution industrielle, lorsque les besoins en capital et en espace sont devenus trop importants pour l’industrie artisanale ou les ateliers.
+        </p>
+      </div>
+  
+      <form action="#" method="post" class="contact-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Votre nom (*)" required />
+          <input type="email" name="email" placeholder="Votre email (*)" required />
+        </div>
+        <div class="form-row">
+          <input type="text" name="subject" placeholder="Objet" />
+          <select name="department" required>
+            <option value="" disabled selected>Département des affaires</option>
+            <option value="ventes">Ventes</option>
+            <option value="support">Support</option>
+            <option value="recrutement">Recrutement</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <textarea name="message" placeholder="Votre message" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="send-button">Envoyer un message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NTAS. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
