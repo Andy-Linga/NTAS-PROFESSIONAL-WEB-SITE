@@ -3,13 +3,15 @@ const router = express.Router();
 
 
 // Page d'accueil
-router.get('', (req, res) => {
+router.get('/', (req, res) => {
   const locals = {
     title: 'NTAS',
     description: 'Welcome to our website!'
   };
-  res.render('index', { 
+
+  res.render('index', {
     locals,
+    stylesheet: ['style','formulaire'],  // ici ton tableau de CSS (par exemple 'style.css')
     currentPage: 'home'
   });
 });
@@ -19,7 +21,7 @@ router.get('/contact', (req, res) => {
   res.render('contact', {
     title: 'Contact',
     description: 'Page de contact de NTAS',
-    stylesheet: 'contact',
+    stylesheet: ['contact', 'formulaire'], // <- plusieurs CSS si besoin
     currentPage: 'contact'
   });
 });
@@ -39,7 +41,7 @@ router.get('/about', (req, res) => {
   res.render('about', {
     title: 'À Propos',
     description: 'En savoir plus sur NTAS',
-    stylesheet: ['about', 'commentaires'], // <- plusieurs CSS si besoin
+    stylesheet: ['about', 'commentaires','formulaire'], // <- plusieurs CSS si besoin
     currentPage: 'about'
   });
 });

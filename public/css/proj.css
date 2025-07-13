@@ -36,6 +36,7 @@
         height: calc(100vh - 100px);
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin-top: 20px;
     }
     
     /* Galerie d'images à faire défiler */
@@ -63,17 +64,9 @@
     .scroll-figure:hover .scroll-track {
         animation-play-state: paused;
     }
+ 
     
-    .label {
-        color: #888;
-        font-weight: 500;
-    }
-    
-    .value {
-        color: #000;
-        font-weight: 600;
-    }
-    
+
     a[role="button"] {
         display: inline-block;
         background-color: #ff6600;
@@ -286,3 +279,64 @@
         font-style: italic;
         padding: 30px;
     }
+     /*-------------------------------------- solutions ------------------------------------*/
+         .solution{
+            margin-bottom: 20px;
+         }
+         .project-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .client-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff6600;
+        }
+
+        .solution-list {
+            display: grid;
+            gap: 25px;
+        }
+
+        .solution-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #ff6600;
+        }
+
+        .solution-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .solution-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .solution-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .highlight-number {
+            color: #ff6600;
+            font-weight: bold;
+        }
+

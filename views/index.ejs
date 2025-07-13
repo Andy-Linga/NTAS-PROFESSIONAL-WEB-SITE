@@ -168,36 +168,9 @@
 <%- include('partials/commentaires') %>
 
 
-<!--------------------------------------------------------------------------------------------->
+<!------------------- contact  formulaire -------------------------------------------------------------------------->
 
-<section class="contact-section">
-  <div class="contact-left">
-    <img src="/images/logontas.png" alt="Logo" class="logo">
-    
-    <div class="contact-info">
-      <h3>Contact</h3>
-      <p>contact@ntas.tn</p>
-      <p>+216 71 234 567</p>
-
-      <h3>Siège</h3>
-      <p>Rue Lac Windermere, Les Berges du Lac, 1053 Tunis, Tunisie</p>
-
-      
-    </div>
-
-  </div>
-
-  <!-- FORMULAIRE VRAI -->
-  <form class="contact-right" method="POST" action="/contact">
-    <h2>Contactez-nous</h2>
-    <input type="text" name="nom" placeholder="Nom et prénom" required>
-    <input type="text" name="telephone" placeholder="Téléphone" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="text" name="sujet" placeholder="Sujet" required>
-    <textarea name="message" placeholder="Message" rows="4" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+  <%- include('partials/formulaire') %>
 <!--------------------------------------------------------------------------------------------->
    
 

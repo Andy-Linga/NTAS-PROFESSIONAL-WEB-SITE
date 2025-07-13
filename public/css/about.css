@@ -30,9 +30,21 @@
             padding-right: 30px;
         }
 
+         .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: orange;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+
         .section-subtitle {
-            color: #ff6b35;
-            font-size: 14px;
+            color: #25316A;
+            font-size: 20px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -41,13 +53,7 @@
         }
     
 
-        .section-title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
+      
 
         .about-text {
             font-size: 16px;
@@ -85,7 +91,7 @@
             max-width: 100%;
             height: auto;
         }
-
+       
         /*------------------------------------- Section Équipe ------------------------------------*/
         .equipe {
             padding: 80px 0;
@@ -400,24 +406,8 @@
             margin-bottom: 60px;
         }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            background: orange;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: black;
-            max-width: 1200px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+   
+       
 
         .partners-carousel {
             position: relative;
@@ -567,3 +557,165 @@
                 grid-template-columns: 1fr;
             }
         }
+
+ 
+/*------------------------------------ Section Références ------------------------------------*/
+.ref {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.ref::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+.references-carousel {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.references-track {
+    display: flex;
+    animation: scroll2 60s linear infinite;
+    gap: 60px;
+    width: fit-content;
+}
+
+.reference-logo {
+    flex-shrink: 0;
+    height: 80px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.reference-logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.5s;
+}
+
+.reference-logo:hover::before {
+    left: 100%;
+}
+
+.reference-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.reference-logo img {
+    max-height: 50px;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+
+.reference-logo:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+.references-track:hover {
+    animation-play-state: paused;
+}
+
+/* Utilisation des mêmes styles pour les statistiques que la section partenaires */
+.ref .stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.ref .stat-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.ref .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: #EE7C00;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ref .stat-label {
+    font-size: 1.1rem;
+    color: #25316A;
+    font-weight: 500;
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ref {
+        padding: 60px 0;
+    }
+
+    .reference-logo {
+        height: 70px;
+        width: 180px;
+    }
+
+    .ref .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .ref .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reference-logo {
+        height: 60px;
+        width: 160px;
+    }
+
+    .ref .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .ref .stat-number {
+        font-size: 2rem;
+    }
+}
