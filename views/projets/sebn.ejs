@@ -87,72 +87,8 @@
 
         
 
-<!-- Commentaires -->
-<div class="comment-section">
-    <div class="comment-form">
-        <h2>Laisser un commentaire</h2>
-        <p class="form-info">
-            Votre adresse e-mail ne sera pas publiée. Les champs obligatoires sont marqués d'un astérisque (<span class="required">*</span>).
-        </p>
 
-        <form id="commentForm">
-            <div class="form-group">
-                <label for="comment">Commentaire <span class="required">*</span></label>
-                <textarea id="comment" name="comment" required placeholder="Partagez votre avis sur ce projet..."></textarea>
-            </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Nom <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-            </div>
 
-            <div class="captcha-group">
-                <div class="form-group">
-                    <span class="captcha-question">9 + 8 = ?</span>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="captcha-input" id="captcha" name="captcha" required maxlength="2">
-                </div>
-            </div>
+<%- include('../partials/comment', { comments, projectSlug }) %>
 
-            <div class="checkbox-group">
-                <input type="checkbox" id="save-info" name="save-info">
-                <label for="save-info">
-                    Enregistrer mon nom, mon e-mail et mon site web dans le navigateur pour mon prochain commentaire.
-                </label>
-            </div>
-
-            <button type="submit" class="submit-btn">Poster un commentaire</button>
-        </form>
-    </div>
-
-    <div class="comments-list">
-        <h3 class="comments-title">Commentaires sur ce projet</h3>
-        
-        <div class="comment-item">
-            <div class="comment-header">
-                <span class="comment-author">Marie Dubois</span>
-                <span class="comment-date">Il y a 2 jours</span>
-            </div>
-            <p class="comment-text">
-                Excellent travail sur ce projet ! La qualité de réalisation est remarquable et les délais ont été respectés. Je recommande vivement NTAS pour ce type de projet.
-            </p>
-        </div>
-
-        <div class="comment-item">
-            <div class="comment-header">
-                <span class="comment-author">Ahmed Ben Ali</span>
-                <span class="comment-date">Il y a 1 semaine</span>
-            </div>
-            <p class="comment-text">
-                Très satisfait de la collaboration avec l'équipe. Le projet Autoliv a été mené avec professionnalisme et expertise technique. Résultat final parfaitement conforme à nos attentes.
-            </p>
-        </div>
-    </div>
-</div>

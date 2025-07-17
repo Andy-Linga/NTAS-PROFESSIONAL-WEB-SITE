@@ -16,15 +16,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// Page Contact
-router.get('/contact', (req, res) => {
-  res.render('contact', {
-    title: 'Contact',
-    description: 'Page de contact de NTAS',
-    stylesheet: ['contact', 'formulaire'], // <- plusieurs CSS si besoin
-    currentPage: 'contact'
-  });
-});
+
 
 // Page Services
 router.get('/services', (req, res) => {
@@ -60,7 +52,7 @@ router.get('/visteon', (req, res) => {
   res.render('projets/visteon', {
     title: 'visteon',
     description: 'visteon',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -70,7 +62,7 @@ router.get('/autoliv', (req, res) => {
   res.render('projets/autoliv', {
     title: 'autoliv',
     description: 'autoliv',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -78,7 +70,7 @@ router.get('/yazaki', (req, res) => {
   res.render('projets/yazaki', {
     title: 'yazaki',
     description: 'yazaki',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -87,7 +79,7 @@ router.get('/sebn', (req, res) => {
   res.render('projets/sebn', {
     title: 'sebn',
     description: 'sebn',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -96,7 +88,7 @@ router.get('/lakebay', (req, res) => {
   res.render('projets/lakebay', {
     title: 'lakebay',
     description: 'lakebay',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -105,7 +97,7 @@ router.get('/hekma', (req, res) => {
   res.render('projets/hekma', {
     title: 'hekma',
     description: 'hekma',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'hekma',
   });
 });
@@ -114,7 +106,7 @@ router.get('/ey', (req, res) => {
   res.render('projets/ey', {
     title: 'ey',
     description: 'ey',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -123,7 +115,7 @@ router.get('/sews', (req, res) => {
   res.render('projets/sews', {
     title: 'sews',
     description: 'sews',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
@@ -132,7 +124,7 @@ router.get('/tunisie', (req, res) => {
   res.render('projets/tunisie', {
     title: 'Tunisie',
     description: 'Projet Tunisie',
-    stylesheet: 'proj',
+    stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
 });
