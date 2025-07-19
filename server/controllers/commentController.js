@@ -1,40 +1,54 @@
+const fs = require('fs');
+const path = require('path');
 const Comment = require('../models/comment');
 
-// 👇 TRAITEMENT DU FORMULAIRE (POST)
+// 📨 Enregistrement du commentaire
 exports.submitComment = async (req, res) => {
   try {
-    const { name, email, comment, project } = req.body; // ← on récupère le projet dynamiquement
+    const { prenom, name, email, comment, project } = req.body;
 
     await Comment.create({
+      prenom,
       name,
       email,
       message: comment,
-      project // 👈 dynamique (autoliv, yazaki, ey...)
+      project
     });
 
-    res.redirect(`/projects/${project}?success=1`);
+    res.redirect(`/projets/${project}?success=1`);
   } catch (err) {
     console.error('Erreur commentaire :', err);
-    res.redirect(`/projects/${project}?error=1`);
+    res.redirect(`/projets/${project}?error=1`);
   }
 };
 
-// 👇 AFFICHAGE DES COMMENTAIRES (GET)
+// 📄 Affichage dynamique d’un projet + ses commentaires
 exports.getComments = async (req, res) => {
   const projectSlug = req.params.slug;
 
   try {
+    console.log('Project demandé :', projectSlug);
+
+    // 1. Vérifier si la vue existe
+    const viewPath = path.join(__dirname, '..', '..', 'views', 'projets', `${projectSlug}.ejs`);
+    if (!fs.existsSync(viewPath)) {
+      console.error('Vue introuvable :', viewPath);
+      return res.status(404).send('Vue introuvable : ' + projectSlug);
+    }
+
+    // 2. Récupérer les commentaires liés à ce projet
     const comments = await Comment.find({ project: projectSlug }).sort({ date: -1 });
 
+    // 3. Rendre la bonne vue avec les données
     res.render(`projets/${projectSlug}`, {
       comments,
       projectSlug,
-      currentPage: 'projects-' + projectSlug,
+      currentPage: `projects-${projectSlug}`,
       title: `Projet ${projectSlug}`,
-      stylesheet: ['projet', 'commentaire']
+     stylesheet: ['proj','comment'],
     });
   } catch (err) {
-    console.error(err);
-    res.status(404).send('Projet introuvable.');
+    console.error('Erreur affichage projet :', err);
+    res.status(500).send('Erreur serveur.');
   }
 };

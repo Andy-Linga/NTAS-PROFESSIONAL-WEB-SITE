@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const commentController = require('../controllers/commentController');
 
-router.get('/projects/:slug', commentController.getComments);
+// Route dynamique pour chaque projet
+router.get('/projets/:slug', commentController.getComments);
+
+// Route POST pour les commentaires
 router.post('/comment', commentController.submitComment);
 
 module.exports = router;

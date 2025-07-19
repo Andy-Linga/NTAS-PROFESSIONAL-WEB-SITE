@@ -57,7 +57,7 @@ router.get('/visteon', (req, res) => {
   });
 });
 
-router.get('/autoliv', (req, res) => {
+/*router.get('/autoliv', (req, res) => {
   console.log('Route /autoliv appelée'); // Pour debug
   res.render('projets/autoliv', {
     title: 'autoliv',
@@ -65,7 +65,7 @@ router.get('/autoliv', (req, res) => {
     stylesheet: ['proj','comment'],
     currentPage: 'projects',
   });
-});
+});*/
 router.get('/yazaki', (req, res) => {
   res.render('projets/yazaki', {
     title: 'yazaki',
