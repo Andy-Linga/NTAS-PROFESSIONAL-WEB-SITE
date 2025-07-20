@@ -80,6 +80,35 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//pour test card testimony (commentaires.ejs)
+const cards = document.querySelectorAll('.testimonial-card');
+let currentIndex = 0;
+
+function showCard(index) {
+  cards.forEach((card, i) => {
+    card.style.display = i === index ? 'block' : 'none';
+  });
+}
+
+document.querySelector('.arrow.right').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % cards.length;
+  showCard(currentIndex);
+});
+
+document.querySelector('.arrow.left').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  showCard(currentIndex);
+});
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % cards.length;
+  showCard(currentIndex);
+}, 30000); // 30 sec
+
+// Initial
+showCard(currentIndex);
+/*------------------------------------------------------------------------------------------------*/
+
 //pour la photo là sur about.ejs
 
 document.addEventListener('DOMContentLoaded', function() {

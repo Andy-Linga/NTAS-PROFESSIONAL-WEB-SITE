@@ -1,38 +1,4 @@
-   <section class="commentaire">
- <div class="text-container4">
-  <p class="subtitle">TÉMOIGNAGES</p>
-  <h2 class="title">Que disent les clients ?</h2>
-</div>
-
-  
-    <div class="testimonial-container">
-      <button class="arrow left">←</button>
-
-      <% if (comments.length > 0) { %>
-        <% comments.forEach(c => { %>
-          <div class="testimonial-card">
-           
-            <p class="testimonial-text"><%= c.message %></p>
-            
-            <h4><%= c.prenom %> <%= c.name|| '' %></h4>
-            
-            <p class="client-role"><%= c.project %></p>
-          
-          </div>
-        <% }) %>
-      <% } else { %>
-        <p>Aucun témoignage disponible.</p>
-      <% } %>
-    <button class="arrow right">→</button>
-    </div>
-
-
-    
- 
-</section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const testimonialContainer = document.querySelector('.testimonial-container');
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     const leftArrow = document.querySelector('.arrow.left');
@@ -48,64 +14,33 @@
     const autoSlideDelay = 4000; // 4 secondes
     const isAutoSlideEnabled = true; // Mettre à false pour désactiver le défilement auto
 
-    // Fonction pour afficher une carte avec animation de carrousel en boucle
-    function showCard(index, direction = 'next') {
-        const currentCard = document.querySelector('.testimonial-card.active');
-        const newCard = testimonialCards[index];
-        
-        // Si c'est le premier chargement
-        if (!currentCard) {
-            testimonialCards.forEach(card => {
+    // Masquer toutes les cartes sauf la première
+    function showCard(index) {
+        testimonialCards.forEach((card, i) => {
+            if (i === index) {
+                card.style.display = 'flex';
+                card.style.opacity = '0';
+                // Animation d'apparition
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease-in-out';
+                    card.style.opacity = '1';
+                }, 50);
+            } else {
                 card.style.display = 'none';
-                card.style.transform = 'translate(-50%, -50%) translateX(100%)';
-            });
-            newCard.style.display = 'flex';
-            newCard.style.transform = 'translate(-50%, -50%) translateX(0)';
-            newCard.classList.add('active');
-            return;
-        }
-
-        // Préparer la nouvelle carte
-        newCard.style.display = 'flex';
-        newCard.style.transform = direction === 'next' ? 
-            'translate(-50%, -50%) translateX(100%)' : 
-            'translate(-50%, -50%) translateX(-100%)';
-        newCard.style.transition = 'transform 0.6s ease-in-out';
-        
-        // Animer l'ancienne carte vers la sortie
-        currentCard.style.transition = 'transform 0.6s ease-in-out';
-        currentCard.style.transform = direction === 'next' ? 
-            'translate(-50%, -50%) translateX(-100%)' : 
-            'translate(-50%, -50%) translateX(100%)';
-        
-        // Animer la nouvelle carte vers le centre
-        setTimeout(() => {
-            newCard.style.transform = 'translate(-50%, -50%) translateX(0)';
-            newCard.classList.add('active');
-        }, 50);
-        
-        // Nettoyer après l'animation
-        setTimeout(() => {
-            testimonialCards.forEach(card => {
-                if (card !== newCard) {
-                    card.style.display = 'none';
-                    card.classList.remove('active');
-                    card.style.transform = 'translate(-50%, -50%) translateX(100%)';
-                }
-            });
-        }, 600); // Après la durée de l'animation
+            }
+        });
     }
 
     // Fonction pour aller au témoignage suivant
     function nextTestimonial() {
         currentIndex = (currentIndex + 1) % testimonialCards.length;
-        showCard(currentIndex, 'next');
+        showCard(currentIndex);
     }
 
     // Fonction pour aller au témoignage précédent
     function prevTestimonial() {
         currentIndex = currentIndex === 0 ? testimonialCards.length - 1 : currentIndex - 1;
-        showCard(currentIndex, 'prev');
+        showCard(currentIndex);
     }
 
     // Démarrer le défilement automatique
@@ -219,9 +154,8 @@
             }
 
             dot.addEventListener('click', function() {
-                const direction = index > currentIndex ? 'next' : 'prev';
                 currentIndex = index;
-                showCard(currentIndex, direction);
+                showCard(currentIndex);
                 updatePaginationDots();
                 restartAutoSlide();
             });
@@ -240,12 +174,10 @@
     }
 
     // Initialisation
-    testimonialCards[currentIndex].classList.add('active');
-    showCard(currentIndex, 'next');
+    showCard(currentIndex);
     createPaginationDots();
     startAutoSlide();
 
     // Log pour debug
     console.log(`Carrousel initialisé avec ${testimonialCards.length} témoignages`);
 });
-</script>

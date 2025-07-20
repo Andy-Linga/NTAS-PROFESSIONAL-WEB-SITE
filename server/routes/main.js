@@ -1,7 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const homeComController = require('../controllers/homeComController');
+const aboutController = require('../controllers/aboutController');
 
 
+//page d'accueil
+router.get('/', homeComController.renderHome);
+
+//page about
+router.get('/about', aboutController.renderAboutPage);
+
+
+
+/*
 // Page d'accueil
 router.get('/', (req, res) => {
   const locals = {
@@ -15,7 +26,7 @@ router.get('/', (req, res) => {
     currentPage: 'home'
   });
 });
-
+*/
 
 
 // Page Services
@@ -27,7 +38,7 @@ router.get('/services', (req, res) => {
     currentPage: 'services'
   });
 });
-
+/*
 // Page À propos (avec commentaires.css en plus)
 router.get('/about', (req, res) => {
   res.render('about', {
@@ -37,6 +48,8 @@ router.get('/about', (req, res) => {
     currentPage: 'about'
   });
 });
+*/
+
 
 // Page Projets génerals
 router.get('/projects', (req, res) => {
