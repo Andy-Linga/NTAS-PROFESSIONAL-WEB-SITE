@@ -24,7 +24,7 @@
                 <div class="col-lg-6">
                     <div class="about-image" id="aboutImage">
                         <div class="orange-background"></div>
-                        <img src="/images/cable1 - Copie.jpeg" alt="Factory History" class="img-fluid">
+                        <img src="/images/yeux.jpg" alt="Factory History" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -139,6 +139,11 @@
         </div>
     </section>
 
+
+
+<%- include('partials/intervention') %>
+ 
+ 
 <!-------------------------- Commentaires------------------------------------------------------------------->
 
     <%- include('partials/commentaires') %>
@@ -477,10 +482,30 @@
                     <div class="reference-logo">
                         <img src="/images/references/mecachrome.jpg" alt="mecachrome">
                     </div>
+                    
 
-       
+                </div>
         </div>
     </section>   
 <!------------------- contact  formulaire -------------------------------------------------------------------------->
 
   <%- include('partials/formulaire') %>
+
+
+      <script>
+        // Données des détails passées du serveur
+        const details = <%- JSON.stringify(details) %>;
+    </script>
+
+
+
+
+
+
+<script src="/js/intervention.js"></script>
+
+
+
+
+
+  

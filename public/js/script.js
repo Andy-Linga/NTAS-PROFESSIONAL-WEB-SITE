@@ -80,6 +80,57 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/****************************Acceeuil*********************/
+
+  function scrollSlider(direction) {
+            const slider = document.getElementById('slider');
+            const scrollAmount = 320; // largeur d'une carte + gap
+            slider.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling pour les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec animation
+        document.querySelectorAll('.service-card, .portfolio-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+
+/************************************************************************************************ */
+
 //pour test card testimony (commentaires.ejs)
 const cards = document.querySelectorAll('.testimonial-card');
 let currentIndex = 0;
@@ -207,83 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ---------------------------- Pour projects.ejs -------------------- //
-let currentPage = 1;
-const totalPages = 3;
-
-function showPage(pageNumber) {
-    // Cacher tous les projets
-    document.querySelectorAll('.proj').forEach(proj => {
-        proj.classList.add('hidden');
-    });
-
-    // Afficher les projets de la page sélectionnée
-    document.querySelectorAll(`.page-${pageNumber}`).forEach(proj => {
-        proj.classList.remove('hidden');
-    });
-
-    // Mettre à jour tous les boutons de pagination sur la page
-    document.querySelectorAll('.pagination').forEach(pagination => {
-        const buttons = pagination.querySelectorAll('button:not(.nav-btn)');
-        buttons.forEach((btn, index) => {
-            btn.classList.toggle('active', index === pageNumber - 1);
-        });
-
-        const prevBtn = pagination.querySelector('button.nav-btn:first-child');
-        const nextBtn = pagination.querySelector('button.nav-btn:last-child');
-
-        if (prevBtn) prevBtn.style.opacity = pageNumber === 1 ? '0.5' : '1';
-        if (nextBtn) nextBtn.style.opacity = pageNumber === totalPages ? '0.5' : '1';
-    });
-}
-
-function goToPage(pageNumber) {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-        currentPage = pageNumber;
-        showPage(currentPage);
-    }
-}
-
-function changePage(direction) {
-    if (direction === 'prev' && currentPage > 1) {
-        currentPage--;
-    } else if (direction === 'next' && currentPage < totalPages) {
-        currentPage++;
-    }
-    showPage(currentPage);
-}
-
-// Animation d'entrée au chargement
-window.addEventListener('load', () => {
-    const projets = document.querySelectorAll('.proj');
-    projets.forEach((projet, index) => {
-        if (!projet.classList.contains('hidden')) {
-            setTimeout(() => {
-                projet.style.opacity = '0';
-                projet.style.transform = 'translateY(50px)';
-                projet.style.transition = 'all 0.6s ease';
-
-                setTimeout(() => {
-                    projet.style.opacity = '1';
-                    projet.style.transform = 'translateY(0)';
-                }, 100);
-            }, index * 200);
-        }
-    });
-
-    // Afficher la première page au démarrage
-    showPage(currentPage);
-});
-
-// Effet de clic sur les projets
-document.querySelectorAll('.proj').forEach(proj => {
-    proj.addEventListener('click', () => {
-        proj.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            proj.style.transform = '';
-        }, 150);
-    });
-});
-
 
 // ---------------------------- Effet de défilement des galeries -------------------- //
 
