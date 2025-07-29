@@ -18,6 +18,10 @@
             gap: 30px;
             margin-bottom: 100px;
         }
+        .proj-link{
+-webkit-box-shadow: -4px 3px 15px 10px rgba(0,0,0,0.15); 
+box-shadow: -4px 3px 15px 10px rgba(0,0,0,0.15);
+        }
 
         .proj {
             position: relative;

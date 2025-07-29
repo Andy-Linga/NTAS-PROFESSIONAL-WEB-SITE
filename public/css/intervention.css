@@ -83,6 +83,14 @@
 .image-section {
     position: relative;
     overflow: hidden;
+    
+}
+#detailImage {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: cover;
+  
 }
 
 .detail-image {
@@ -133,6 +141,8 @@
 .detail-icon {
     font-size: 2rem;
     display: block;
+    width: 100px;
+    height: auto;
 }
 
 .detail-title {

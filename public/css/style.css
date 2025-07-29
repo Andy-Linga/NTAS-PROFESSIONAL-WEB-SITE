@@ -565,21 +565,11 @@
             font-size: 0.9rem;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: #EE7C00;
-            border: 2px solid #EE7C00;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .lien {
+            position: relative;
+            margin-bottom: 20px;
         }
 
-        .btn-secondary:hover {
-            background-color: #EE7C00;
-            color: white;
-        }
 
         .about-images {
             display: grid;
@@ -632,6 +622,10 @@
         .section-header h2 {
             font-size: clamp(2rem, 4vw, 2.5rem);
             font-weight: 600;
+        }
+
+        .blue{
+            color: #25316A;
         }
 
         .metier-grid {

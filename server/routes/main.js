@@ -142,6 +142,65 @@ router.get('/tunisie', (req, res) => {
   });
 });
 
+/************** Details projets en cours (proj) ******************************************* */
+router.get('/sebn3', (req, res) => {
+  res.render('cours/sebn3', {
+    title: 'SEBN TN3',
+    description: 'SEBN TN3',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+router.get('/intelcia', (req, res) => {
+  res.render('cours/intelcia', {
+    title: 'INTELCIA',
+    description: 'INTELCIA',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+router.get('/kadatex', (req, res) => {
+  res.render('cours/kadatex', {
+    title: 'KADATEX',
+    description: 'KADATEX',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+router.get('/ecce', (req, res) => {
+  res.render('cours/ecce', {
+    title: 'ECCE',
+    description: 'ECCE',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+router.get('/sonede', (req, res) => {
+  res.render('cours/sonede', {
+    title: 'SONEDE',
+    description: 'SONEDE',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+router.get('/henner', (req, res) => {
+  res.render('cours/henner', {
+  title: 'HENNER ASSURANCE',
+    description: 'HENNER ASSURANCE',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+
+router.get('/delice', (req, res) => {
+  res.render('cours/delice', {
+    title: 'DELICE',
+    description: 'DELICE',
+    stylesheet: ['coursProjs'],
+    currentPage: 'current_projects',
+  });
+});
+
 /***************** Galerie *****************************************/
 router.get('/projects/galerie', (req, res) => {
   res.render('galerie', {

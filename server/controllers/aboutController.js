@@ -7,14 +7,14 @@ exports.renderAboutPage = async (req, res) => {
 
    const details = [
   {
-    icon: "🛡️",
+    icon: "/images/bouclier.png",
     title: "Site industriel et Seveso ",
     items: [
       "Sécurité maximale est nécessaire pour les sites sensibles et industriels, incluant :",
       "Filtrage des accès.",
       "Détection de fumée, départ de feu, asservissement et extinction."
     ],
-    image: "https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&w=800"
+    image: "/images/industrie.jpg"
   },
   {
     icon: "⚙️",
@@ -24,7 +24,7 @@ exports.renderAboutPage = async (req, res) => {
       "Vidéosurveillance et Alarme intrusion",
       "Poste Centrale de supervision (PCS), live view et traçabilité complète"
     ],
-    image: "https://images.pexels.com/photos/257856/pexels-photo-257856.jpeg?auto=compress&cs=tinysrgb&w=800"
+     image: "/images/batiment.jpg"
   },
   {
     icon: "🔒",
@@ -33,7 +33,7 @@ exports.renderAboutPage = async (req, res) => {
       "Couverture Internet totale en Wi-Fi 6 : plage, piscine, espaces communs et chambres.",
       "TVIP, Remplacement des solutions TV classiques par une solution IP assurant plus d’interactivité et IOT."
     ],
-    image: "https://images.pexels.com/photos/70441/pexels-photo-70441.jpeg?w=800&h=600&fit=crop"
+    image: "/images/hotel.jpg"  
 
   }
 ];

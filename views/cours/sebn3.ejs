@@ -1,0 +1,252 @@
+
+
+    <div class="container">
+       <!-- Navigation des projets -->
+        <!----
+          
+            <div class="project-nav">
+                <button class="nav-btn active" onclick="loadProject('sebn')">SEBN - TN3</button>
+                <button class="nav-btn" onclick="loadProject('intelcia')">INTELCIA</button>
+                <button class="nav-btn" onclick="loadProject('kadetex')">KADETEX</button>
+                <button class="nav-btn" onclick="loadProject('ecce')">ECCE</button>
+                <button class="nav-btn" onclick="loadProject('sonede')">SONEDE</button>
+                <button class="nav-btn" onclick="loadProject('henner')">HENNER</button>
+                <button class="nav-btn" onclick="loadProject('delice')">Délice</button>
+            </div>
+       
+       
+       --> 
+        <div class="content">
+           
+
+            <!-- Informations générales -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><span class="icon"><img src="https://img.icons8.com/ios-filled/30/25316A/user.png" alt="Client Icon"></span> Client</h3>
+                    <p id="clientName">SEBN - TN3</p>
+                </div>
+                <div class="info-card">
+                     <h3><span class="icon"><img src="https://img.icons8.com/ios-filled/30/25316A/marker.png" alt="Lieu Icon"></span> Lieu</h3>
+                    <p id="projectLocation">Jendouba</p>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon"><img src="https://img.icons8.com/ios-filled/30/25316A/view-details.png" alt="Détails Icon"></span> Détails</h3>
+                    <p id="projectArea">Superficie : 40 466 m²</p>
+                </div>
+                <div class="info-card">
+                     <h3><span class="icon"> <img src="https://img.icons8.com/ios-filled/30/25316A/clock.png" alt="Statut Icon"></span> Statut</h3>
+
+                    <p id="projectStatus">En cours</p>
+                </div>
+            </div>
+
+            <!-- Services déployés -->
+            <div class="services-section">
+                <h2>Services Déployés</h2>
+                <div class="services-grid" id="servicesGrid">
+                    <div class="service-item">
+                        <div class="service-icon"><img src="https://img.icons8.com/ios-filled/50/25316A/service.png" alt="Service Icon"></div>
+                        <h4>Contrôle d'accès</h4>
+                        <p>Système de sécurité avancé</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><img src="https://img.icons8.com/ios-filled/50/25316A/service.png" alt="Service Icon"></div>
+                        <h4>Vidéosurveillance</h4>
+                        <p>Surveillance 24/7</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><img src="https://img.icons8.com/ios-filled/50/25316A/service.png" alt="Service Icon"></div>
+                        <h4>Informatique</h4>
+                        <p>Infrastructure IT</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Progression du projet -->
+             <!--   <div class="progress-section">
+                <h2>Avancement du Projet</h2>
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <span>Planification</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <span>Installation</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <span>Configuration</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <span>Tests & Validation</span>
+                        <span>20%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 20%"></div>
+                    </div>
+                </div>
+            </div>
+                
+             
+             -->
+            
+        </div>
+    </div>
+<!--
+       <script>
+        // Données des projets
+        const projects = {
+            sebn: {
+                title: "SEBN - TN3 Jendouba",
+                client: "SEBN - TN3",
+                location: "Jendouba",
+                area: "40 466 m²",
+                status: "En cours",
+                services: [
+                    { icon: "🔐", name: "Contrôle d'accès", desc: "Système de sécurité avancé" },
+                    { icon: "📹", name: "Vidéosurveillance", desc: "Surveillance 24/7" },
+                    { icon: "💻", name: "Informatique", desc: "Infrastructure IT" },
+                    { icon: "⚡", name: "Courant faible", desc: "Installation électrique" }
+                ]
+            },
+            intelcia: {
+                title: "INTELCIA Lac 2",
+                client: "INTELCIA",
+                location: "Lac 2",
+                area: "3 étages - 142 lecteurs",
+                status: "En cours",
+                services: [
+                    { icon: "🔐", name: "Contrôle d'accès", desc: "142 lecteurs installés" },
+                    { icon: "🏢", name: "Multi-étages", desc: "Installation sur 3 étages" }
+                ]
+            },
+            kadetex: {
+                title: "KADETEX El Fejja",
+                client: "KADETEX",
+                location: "El Fejja",
+                area: "Site industriel",
+                status: "En cours",
+                services: [
+                    { icon: "🔐", name: "Contrôle d'accès", desc: "Système de sécurité" },
+                    { icon: "🚨", name: "Alarme intrusion", desc: "Protection périmétrique" },
+                    { icon: "📹", name: "Vidéosurveillance", desc: "Surveillance continue" },
+                    { icon: "🌐", name: "Solution VDI", desc: "Infrastructure informatique" }
+                ]
+            },
+            ecce: {
+                title: "ECCE Mauritanie - Data Center",
+                client: "ECCE",
+                location: "Mauritanie",
+                area: "Data center bancaire",
+                status: "En cours",
+                services: [
+                    { icon: "❄️", name: "Climatisation STULZ", desc: "Climat de précision" },
+                    { icon: "⚡", name: "Alimentation électrique", desc: "Système d'alimentation" },
+                    { icon: "🏗️", name: "Faux plancher", desc: "Infrastructure technique" },
+                    { icon: "🛡️", name: "Extinction NOVEC 1230", desc: "Protection incendie" }
+                ]
+            },
+            sonede: {
+                title: "SONEDE - Station Dessalement",
+                client: "SONEDE",
+                location: "Tunis - EPPM Sousse",
+                area: "Station 50 000 m³",
+                status: "En cours",
+                services: [
+                    { icon: "💻", name: "Informatique", desc: "Système de contrôle" },
+                    { icon: "📹", name: "Vidéosurveillance", desc: "Surveillance site" },
+                    { icon: "📞", name: "Téléphonie", desc: "Communication" },
+                    { icon: "💧", name: "Dessalement", desc: "Traitement eau 50 000 m³" }
+                ]
+            },
+            henner: {
+                title: "HENNER Assurance",
+                client: "HENNER",
+                location: "Lac 1",
+                area: "Bureau d'assurance",
+                status: "En cours",
+                services: [
+                    { icon: "🔐", name: "Contrôle d'accès", desc: "Solution de sécurité" }
+                ]
+            },
+            delice: {
+                title: "Délice Morneg",
+                client: "Délice",
+                location: "Morneg",
+                area: "Site industriel",
+                status: "En cours",
+                services: [
+                    { icon: "🔐", name: "Contrôle d'accès", desc: "Système de sécurité" },
+                    { icon: "📹", name: "Vidéosurveillance", desc: "Surveillance continue" },
+                    { icon: "🌐", name: "Solution VDI", desc: "Infrastructure informatique" }
+                ]
+            }
+        };
+
+        function loadProject(projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            // Mettre à jour les boutons de navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Mettre à jour les informations avec animation
+            const container = document.querySelector('.container');
+            container.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                document.getElementById('projectTitle').textContent = project.title;
+                document.getElementById('clientName').textContent = project.client;
+                document.getElementById('projectLocation').textContent = project.location;
+                document.getElementById('projectArea').textContent = project.area;
+                document.getElementById('projectStatus').textContent = project.status;
+
+                // Mettre à jour les services
+                const servicesGrid = document.getElementById('servicesGrid');
+                servicesGrid.innerHTML = '';
+                
+                project.services.forEach(service => {
+                    const serviceItem = document.createElement('div');
+                    serviceItem.className = 'service-item';
+                    serviceItem.innerHTML = `
+                        <div class="service-icon">${service.icon}</div>
+                        <h4>${service.name}</h4>
+                        <p>${service.desc}</p>
+                    `;
+                    servicesGrid.appendChild(serviceItem);
+                });
+
+                container.style.opacity = '1';
+            }, 300);
+        }
+
+        // Animation au chargement
+        window.addEventListener('load', () => {
+            const progressFills = document.querySelectorAll('.progress-fill');
+            setTimeout(() => {
+                progressFills.forEach(fill => {
+                    fill.style.width = fill.style.width;
+                });
+            }, 500);
+        });
+    </script>  
+    -->
+ 
