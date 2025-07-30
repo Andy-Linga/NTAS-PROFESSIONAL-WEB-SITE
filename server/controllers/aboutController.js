@@ -17,7 +17,7 @@ exports.renderAboutPage = async (req, res) => {
     image: "/images/industrie.jpg"
   },
   {
-    icon: "⚙️",
+    icon: "/images/batiments.png",
     title: "Bâtiments tertiaires",
     items: [
       "Contrôle d'accès centralisé pour les sites locaux et distants",
@@ -27,7 +27,7 @@ exports.renderAboutPage = async (req, res) => {
      image: "/images/batiment.jpg"
   },
   {
-    icon: "🔒",
+    icon: "/images/hotel.png",
     title: "Hôtellerie",
     items: [
       "Couverture Internet totale en Wi-Fi 6 : plage, piscine, espaces communs et chambres.",

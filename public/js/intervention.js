@@ -35,7 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Mise à jour de l'icône et du titre
-        if (detailIcon) detailIcon.textContent = detail.icon;
+        if (detailIcon) {
+    detailIcon.src = detail.icon;
+    detailIcon.alt = detail.title || "Icône";
+}
+
         if (detailTitle) detailTitle.textContent = detail.title;
         
         // Mise à jour des items avec animation

@@ -93,6 +93,8 @@
   
 }
 
+
+
 .detail-image {
     width: 100%;
     height: 100%;
@@ -145,13 +147,12 @@
     height: auto;
 }
 
-.detail-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a202c;
-    line-height: 1.2;
+.detail-icon {
+    width: 40px;         /* ajuste à ta convenance : 40px, 50px, etc. */
+    height: auto;        /* garde le ratio */
+    object-fit: contain; /* ou "cover" si tu veux remplir le cadre */
+    display: block;
 }
-
 /* Items du détail */
 .detail-items {
     margin-bottom: 32px;
