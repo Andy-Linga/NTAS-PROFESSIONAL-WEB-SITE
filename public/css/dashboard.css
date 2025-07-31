@@ -1,0 +1,33 @@
+.admin-dashboard {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.admin-dashboard h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.admin-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 30px;
+  width: 250px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.admin-card:hover {
+  background: #EE7C00;
+  color: white;
+  transform: translateY(-5px);
+}

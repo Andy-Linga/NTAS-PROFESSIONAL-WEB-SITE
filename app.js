@@ -31,6 +31,8 @@ app.set('view engine', 'ejs');
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/formulaireRoutes'));
 app.use('/', require('./server/routes/projectRoutes'));
+app.use('/', require('./server/routes/adminRoutes'));
+
 
 
 

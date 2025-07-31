@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Commentaires reçus</h1>
+  <div class="table-wrapper">
+    <table>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Projet</th>
+        <th>Message</th>
+        <th>Date</th>
+        <th>Supprimer</th>
+      </tr>
+      <% comments.forEach(c => { %>
+        <tr>
+          <td><%= c.name %></td>
+          <td><%= c.email %></td>
+          <td><%= c.project %></td>
+          <td><%= c.message %></td>
+          <td><%= c.date.toLocaleDateString() %></td>
+          <td>
+            <a href="/admin/comments/delete/<%= c._id %>" onclick="return confirm('Supprimer ce commentaire ?')" class="btn-supprimer">
+                <img src="https://img.icons8.com/ios-filled/20/FF0000/trash.png" alt="Trash Icon">
+            </a>
+
+            </td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+</div>

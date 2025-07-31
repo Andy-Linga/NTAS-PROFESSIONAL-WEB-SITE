@@ -1,0 +1,254 @@
+/* Reset et styles de base */
+
+
+/* Container principal */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Titre principal */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: #25316A;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #EE7C00;
+
+  border-radius: 2px;
+}
+
+/* Wrapper du tableau pour le scroll horizontal */
+.table-wrapper {
+  overflow-x: auto;
+ 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+/* Styles du tableau */
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 600px; /* Largeur minimale pour éviter l'écrasement */
+}
+
+/* En-tête du tableau */
+.contacts-table thead {
+  background: #25316A;
+  color: white;
+}
+
+.contacts-table thead th {
+  padding: 1.5rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  position: relative;
+}
+
+.contacts-table thead th:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Corps du tableau */
+.contacts-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.contacts-table tbody tr:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contacts-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Cellules du tableau */
+.contacts-table td {
+  padding: 1.25rem;
+  vertical-align: middle;
+  border: none;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Nom complet (première colonne) */
+.name-cell {
+  font-weight: 600;
+  color: #1a202c;
+  font-size: 1.05rem;
+}
+
+/* Email */
+.email-cell {
+  color: #4a5568;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+/* Sujet avec badge */
+.subject-cell {
+  position: relative;
+}
+
+
+/* Responsive - Mobile First */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+    margin: 0.5rem;
+    border-radius: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contacts-table thead th,
+  .contacts-table td {
+    padding: 1rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .name-cell {
+    font-size: 1rem;
+  }
+  
+  .subject-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Transformation en cards pour très petits écrans */
+  .table-wrapper {
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  
+  .contacts-table {
+    display: none; /* Cache le tableau */
+  }
+  
+  /* Cards mobiles */
+  .mobile-cards {
+    display: block;
+  }
+  
+  .contact-card {
+    background: white;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid;
+    border-image: #25316A 1;
+  }
+  
+  .contact-card .name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+  }
+  
+  .contact-card .email {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.9rem;
+  }
+  
+  .contact-card .subject-badge {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Par défaut, masquer les cards mobiles */
+.mobile-cards {
+  display: none;
+}
+
+/* Animation d'entrée */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.contacts-table tbody tr {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.contacts-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.contacts-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.contacts-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.contacts-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.contacts-table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+
+/* Scrollbar personnalisée */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #25316A;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}

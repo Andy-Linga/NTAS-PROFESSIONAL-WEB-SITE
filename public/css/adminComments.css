@@ -1,0 +1,258 @@
+
+/* Container principal - vous pouvez wrapper votre contenu dans cette div */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+/* Titre principal */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: #25316A;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #EE7C00;
+    border-radius: 2px;
+}
+
+/* Wrapper du tableau pour le scroll horizontal */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 800px;
+    
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête du tableau */
+table thead tr,
+table tr:first-child {
+    background: #25316A;
+    color: white;
+}
+
+table th {
+    padding: 1.5rem 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: none;
+    position: relative;
+    color: white;
+}
+
+table th:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Corps du tableau */
+table tbody tr,
+table tr:not(:first-child) {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+}
+
+/* Hover uniquement sur les lignes de données (pas les en-têtes) */
+table tbody tr:hover,
+table tr:not(:first-child):hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05)) !important;
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Forcer les en-têtes à garder leur couleur */
+table tr:first-child:hover,
+table thead tr:hover {
+    background: #25316A !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+table tbody tr:last-child,
+table tr:last-child {
+    border-bottom: none;
+}
+
+/* Cellules du tableau */
+table td {
+    padding: 1.25rem;
+    vertical-align: middle;
+    border: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Nom (première colonne) */
+table td:nth-child(1) {
+    font-weight: 600;
+    color: #1a202c;
+    font-size: 1.05rem;
+}
+
+/* Email (deuxième colonne) */
+table td:nth-child(2) {
+    color: #4a5568;
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+
+/* Projet (troisième colonne) */
+table td:nth-child(3) {
+    color: #2d3748;
+    font-weight: 500;
+}
+
+/* Message (quatrième colonne) */
+table td:nth-child(4) {
+    color: #4a5568;
+    max-width: 300px;
+    word-break: break-word;
+    line-height: 1.6;
+}
+
+/* Date (cinquième colonne) */
+table td:nth-child(5) {
+    color: #718096;
+    white-space: nowrap;
+}
+
+/* Wrapper pour le scroll horizontal */
+.table-wrapper {
+    overflow-x: auto;
+    
+}
+
+/* Animation d'entrée */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+table tbody tr,
+table tr:not(:first-child) {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+table tbody tr:nth-child(1),
+table tr:nth-child(2) { animation-delay: 0.1s; }
+table tbody tr:nth-child(2),
+table tr:nth-child(3) { animation-delay: 0.2s; }
+table tbody tr:nth-child(3),
+table tr:nth-child(4) { animation-delay: 0.3s; }
+table tbody tr:nth-child(4),
+table tr:nth-child(5) { animation-delay: 0.4s; }
+table tbody tr:nth-child(5),
+table tr:nth-child(6) { animation-delay: 0.5s; }
+
+/* Scrollbar personnalisée */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #25316A;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+/* Responsive - Mobile First */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 2rem 1rem;
+        margin: 0.5rem;
+        border-radius: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    table th,
+    table td {
+        padding: 1rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    table td:nth-child(1) {
+        font-size: 1rem;
+    }
+
+    table td:nth-child(4) {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    table th,
+    table td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    table td:nth-child(4) {
+        max-width: 150px;
+    }
+}
