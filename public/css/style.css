@@ -6,15 +6,20 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+body {
+  padding-top: 80px; /* adapte la valeur selon la hauteur réelle de ton header */
+}
 .header {
-    background: #F1F3F4;
-    padding: 0;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    animation: slideInDown 0.8s ease-out;
-    border-bottom: 1px solid #E0E0E0;
-  
+  background: #F1F3F4;
+  padding: 0;
+  position: fixed; /* changement ici */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* pour qu’il soit au-dessus du contenu */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideInDown 0.8s ease-out;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .header-container {
@@ -890,9 +895,9 @@ box-shadow: 1px 14px 31px 6px rgba(0,0,0,0.53);
 
 /*------------------------ footer ---------*---------------------------------*/
 .footer {
-  background-color: #F1F3F4;
+  background: linear-gradient(135deg, #F1F3F4 60%, #25316A 100%);
   color: #333;
-  padding: 60px 20px 30px;
+  padding: 30px 10px 15px;
   text-align: center;
 }
 
@@ -928,13 +933,8 @@ box-shadow: 1px 14px 31px 6px rgba(0,0,0,0.53);
 }
 
 .footer-middle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 60px;
-  border-top: 1px solid #EE7C00;
-  padding-top: 30px;
+  margin-top: 30px;
+  padding-top: 15px;
 }
 
 .footer-logo {
@@ -1009,14 +1009,14 @@ box-shadow: 1px 14px 31px 6px rgba(0,0,0,0.53);
 }
 
 .footer-bottom {
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 14px;
   opacity: 0.8;
 }
 
 
 .footer-contact {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 14px;
   color: #333;
   line-height: 1.6;
