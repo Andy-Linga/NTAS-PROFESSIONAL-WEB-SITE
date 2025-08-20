@@ -1,0 +1,47 @@
+ <div class="login-container">
+  <h1>Créer compte Admin</h1>
+
+  <% if (typeof error !== 'undefined') { %>
+    <p class="error-message"><%= error %></p>
+  <% } %>
+</div>
+
+ 
+ <div class="login-container">
+        <!-- Logo colorlib style -->
+        <div class="upper-logo">
+      <img src="/images/logontas.png" alt="Logo" />
+
+    </div>
+        
+        <form action="/admin/login" method="POST">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur ou Email</label>
+                <div class="input-with-icon">
+                    <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required />
+                    <span class="input-icon"><img src="https://img.icons8.com/ios-filled/20/25316A/user.png" alt="Client Icon"></span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required />
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember">Se souvenir de moi</label>
+            </div>
+            
+            <button type="submit">Se connecter</button>
+        </form>
+        
+        <div class="sign-sign">
+            <a href="/admin/signin" >Créer un compte ?</a>
+        </div>
+        
+            
+            <div class="back-link">
+            <a href="/" onclick="history.back(); return false;">Retour à l'accueil</a>
+        </div>
+    </div>

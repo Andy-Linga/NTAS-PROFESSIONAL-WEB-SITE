@@ -684,6 +684,7 @@ body {
         .portfolio-section {
             padding: 5rem 0;
             background-color: #f8f9fa;
+            text-align: center;  /* ← Ajoutez cette ligne */
         }
 
         .slider-container {
@@ -788,110 +789,7 @@ box-shadow: 1px 14px 31px 6px rgba(0,0,0,0.53);
 
 
  /* Progress Section */
-    .progress-section {
-        padding: 5rem 0;
-        background-color: #f8f9fa;
-    }
-
-    .slider-container {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .slider-btn {
-        background-color: #EE7C00;
-        color: white;
-        border: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        flex-shrink: 0;
-    }
-
-    .slider-btn:hover {
-        background-color: #c76500;
-        transform: scale(1.1);
-    }
-
-    .slider-wrapper {
-        display: flex;
-        gap: 2rem;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        flex: 1;
-        padding: 1rem 0;
-    }
-
-    .slider-wrapper::-webkit-scrollbar {
-        display: none;
-    }
-
-    .progress-card {
-        flex: 0 0 300px;
-        background-color: white;
-       -webkit-box-shadow: 1px 14px 31px 6px rgba(0,0,0,0.53); 
-box-shadow: 1px 14px 31px 6px rgba(0,0,0,0.53);
-
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .progress-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .progress-link {
-    text-decoration: none; /* Supprime le soulignement */
-    color: inherit; /* Hérite de la couleur du parent */
-    display: block; /* Fait que le lien prend toute la largeur */
-    flex: 0 0 300px; /* IMPORTANT: Déplace cette propriété du .progress-card vers .progress-link */
-}
-
-
-      .progress-image {
-    width: 100%;
-    height: 200px;
-   
-    background-size: cover; /* L'image couvre tout l'espace */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2rem;
-}
-
-    .progress-image img {
-    width:100%;
-    height: 100%;
-    object-fit: cover; /* Maintient les proportions et couvre tout l'espace */
-    object-position: center; /* Centre l'image */
-}
-
-    .progress-content {
-        padding: 1.5rem;
-        background-color: #EE7C00;  
-        color: white;
-    }
-
-    .progress-content h4 {
-        margin-bottom: 0.5rem;
-    }
-
-    .progress-content p {
-        color: #25316A;
-        font-size: 0.9rem;
-    }
-
+  
 
 /*------------------------ footer ---------*---------------------------------*/
 .footer {
