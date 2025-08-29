@@ -61,10 +61,25 @@
 
 /* Lower White Section */
 .footer-lower {
-  background-color: white;
-  padding: 40px 20px;
-  color: black;
+  background-color: #25316A; /* site blue */
+  padding: 60px 20px 0 20px; /* bottom handled by .footer-bottom */
+  color: #fff;
   position: relative;
+  overflow: hidden; /* ensure blue fills below slanted line */
+}
+
+/* decorative slanted separator on top */
+.footer-lower::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 2px;
+  background: #EE7C00; /* site orange */
+  transform: rotate(-1.5deg);
+  transform-origin: left top;
+  pointer-events: none;
 }
 
 .footer-navigation {
@@ -95,7 +110,7 @@
 
 .footer-description p {
   font-size: 14px;
-  color: black;
+  color: #fff;
   margin: 0;
 }
 
@@ -106,7 +121,7 @@
 
 .footer-copyright p {
   font-size: 12px;
-  color: #666;
+  color: rgba(255,255,255,0.85);
   margin: 5px 0;
 }
 
@@ -172,7 +187,7 @@
 .footer-logo {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
 }
 
 .logo-diamond {
@@ -222,4 +237,69 @@
 } 
 .footer-logo img {
     width: 100px;
+}
+
+/* --- New three-column layout (Menu/Contact/Recent) --- */
+.footer-columns {
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start; /* keep all columns on a straight line at the top */
+}
+
+.footer-col h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #EE7C00; /* site orange */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin: 8px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #EE7C00; /* site orange */
+}
+
+/* underline to indicate links in Menu */
+.menu-col a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* place description then icons within the third column */
+/* description + icons column styling */
+.footer-col-follow .footer-description {
+  text-align: left;
+}
+.footer-col-follow .footer-social {
+  justify-content: flex-start;
+}
+
+@media (max-width: 900px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* bottom bar with copyright left and logo right */
+/* restore original logo placement */
+.footer-logo img {
+  width: 100px;
 }
