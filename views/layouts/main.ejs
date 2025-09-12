@@ -26,12 +26,20 @@
 
 <body>
   <% if (typeof currentPage === 'undefined') { currentPage = ''; } %>
-  <%- include('../partials/header.ejs') %>
+
+  <% if (currentPage && currentPage.startsWith('admin')) { %>
+    <%- include('../partials/headerAdmin.ejs') %>
+  <% } else { %>
+    <%- include('../partials/header.ejs') %>
+  <% } %>
 
   <main>
     <%- body %>
   </main>
 
-  <%- include('../partials/footer.ejs') %>
+  <% if (!currentPage.startsWith('admin')) { %>
+    <%- include('../partials/footer.ejs') %>
+  <% } %>
 </body>
+
 </html>

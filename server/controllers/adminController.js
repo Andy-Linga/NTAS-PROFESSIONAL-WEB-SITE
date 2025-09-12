@@ -66,17 +66,20 @@ exports.handleLogin = async (req, res) => {
 });
 };
 
+
 // 🔒 Déconnexion admin
 exports.logout = (req, res) => {
   req.session.destroy(err => {
     if (err) {
       console.error('Erreur déconnexion :', err);
-      return res.redirect('/admin');
+      return res.redirect('/admin'); // au pire, rester sur admin
     }
+    // Supprime le cookie de session (ajoute { path: '/' } par sécurité)
+    res.clearCookie('connect.sid', { path: '/' });
+    // 👉 comme demandé
     res.redirect('/');
   });
 };
-
 
 // Dashboard
 exports.dashboard = (req, res) => {
@@ -85,15 +88,6 @@ exports.dashboard = (req, res) => {
     currentPage: 'admin',
     stylesheet: ['dashboard'],
   });
-};
-
-// middlewares/auth.js
-exports.requireAuth = (req, res, next) => {
-console.log('Session actuelle:', req.session); // ← regarde si elle contient "admin"
-  if (req.session && req.session.admin) {
-    return next();
-  }
-  res.redirect('/admin/login');
 };
 
 

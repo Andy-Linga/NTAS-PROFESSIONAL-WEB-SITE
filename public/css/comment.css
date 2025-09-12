@@ -60,6 +60,7 @@
 
     input[type="text"],
     input[type="email"],
+    input[type="tel"],
     textarea {
         width: 100%;
         padding: 12px;
@@ -72,6 +73,7 @@
 
     input[type="text"]:focus,
     input[type="email"]:focus,
+    input[type="tel"]:focus,
     textarea:focus {
         outline: none;
         border-color: #ff6600;

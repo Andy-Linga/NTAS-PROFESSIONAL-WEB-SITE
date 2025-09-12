@@ -5,12 +5,14 @@ const Comment = require('../models/comment');
 // 📨 Enregistrement du commentaire
 exports.submitComment = async (req, res) => {
   try {
-    const { prenom, name, email, comment, project } = req.body;
+    // Inclure 'telephone' ici
+    const { prenom, name, email, telephone, comment, project } = req.body;
 
     await Comment.create({
       prenom,
       name,
       email,
+      telephone, // maintenant ce sera bien récupéré
       message: comment,
       project
     });
@@ -18,9 +20,10 @@ exports.submitComment = async (req, res) => {
     res.redirect(`/projets/${project}?success=1`);
   } catch (err) {
     console.error('Erreur commentaire :', err);
-    res.redirect(`/projets/${project}?error=1`);
+    res.redirect(`/projets/${req.body.project}?error=1`);
   }
 };
+
 
 // 📄 Affichage dynamique d’un projet + ses commentaires
 exports.getComments = async (req, res) => {
